@@ -1,8 +1,27 @@
-var searchBar = document.querySelector("input");
-searchBar.addEventListener("click", function() {
-  var search = document.getElementsByClass("searchField");
-  search.style.border = "solid";
+var searchBox = document.getElementById("searchBox");
+var searchDisplay = document.getElementById("searchDisplay");
 
-  document.getElementById("searchField").placeholder="";
-  document.getElementsByName("search")[0].placeholder="";
-})
+searchBox.addEventListener("blur", documentRevert);
+searchBox.addEventListener("click", clearSearch);
+
+function clearSearch() {
+  searchBox.style.border = "solid";
+  searchBox.style.borderColor = "rgb(255,165,0)";
+  searchBox.style.borderWidth = "1.5px";
+}
+
+function documentRevert() {
+  searchBox.style.border = "none";
+  searchBox.value = "";
+};
+
+searchBox.addEventListener("keydown", function(event) {
+  if (event.keyCode === 13 && searchBox.value !== "") {
+    getResults();
+  };
+});
+
+function getResults() {
+  var wikiSearch = "https://en.wikipedia.org/wiki/search:" + searchBox.value;
+  searchDisplay.setAttr("src", wikiSearch);
+};

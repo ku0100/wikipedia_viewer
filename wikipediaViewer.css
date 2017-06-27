@@ -1,57 +1,59 @@
 * {
-  background-color: #26466D;
+  background-color: #092B40;
 }
+
+/* below is formatting for specific element types*/
 
 a {
   text-decoration: none;
   color: white;
 }
-
-button {
-  padding: 0;
-  border: none;
-  background: none;
+p {
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+iframe {
+  height: 100%;
+  width: 80%;
+  margin: auto;
+}
+.container {
+  padding-top: 25%;
+}
+.container > p {
+  color: white;
+}
+.searchField {
+  text-align: center;
+  margin: auto;
 }
 
-button:focus {
-  outline: 0;
-}
-
-button:hover {
-  cursor: pointer;
-}
+/*below is formatting on search box focus*/
 
 input[type=text] {
   width: 10%;
   border: none;
   color: white;
   border-color: rgb(255,165,0);
+  outline: none;
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
 }
-
 input[type=text]:focus {
   width: 30%;
 }
 
-p {
-  margin: auto;
-  text-align: center;
-  font-family: arial;
+/* below two will set the icon to transparent when the search box is in focus */
+
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+input:focus:-moz-placeholder {
+  color: transparent;
 }
 
-.container {
-  padding-top: 50%;
-}
-
-.container > p {
-  color: white;
-}
-
-.searchField {
-  text-align: center;
-  margin: auto;
-}
+/* below is formatting/coloring for the placeholder magnifying glass to match example provided by freecodecamp*/
 
 ::-webkit-input-placeholder { /* Chrome */
   color: rgb(255,165,0);
