@@ -29,6 +29,13 @@ iframe {
   margin: auto;
 }
 
+#searchDisplay {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: absolute;
+}
+
 /*below is formatting on search box focus*/
 
 input[type=text] {

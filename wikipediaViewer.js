@@ -22,6 +22,7 @@ searchBox.addEventListener("keydown", function(event) {
 });
 
 function getResults() {
-  var wikiSearch = "https://en.wikipedia.org/wiki/search:" + searchBox.value;
-  searchDisplay.setAttr("src", wikiSearch);
-};
+  var wikiSearch = "https://en.wikipedia.org/w/index.php?search=" + searchBox.value;
+  searchDisplay.src = wikiSearch;
+  searchDisplay.style.display = "block";
+}
